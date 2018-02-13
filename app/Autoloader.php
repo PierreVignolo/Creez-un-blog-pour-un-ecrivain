@@ -8,7 +8,8 @@ namespace App;
  */
 
 
-class Autoloader {
+class Autoloader 
+{
 
     /**
      * Enregistre notre autoloader
