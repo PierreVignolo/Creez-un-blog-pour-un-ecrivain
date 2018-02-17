@@ -6,6 +6,7 @@ require '../app/Autoloader.php';
 $app = App\App::getInstance();
 
 $posts = $app->getTable('Posts');
+var_dump($posts->all());
 
 
 
