@@ -3,13 +3,14 @@
 require '../app/Autoloader.php';
 \App\Autoloader::register();
 
-
 $app = App\App::getInstance();
-$app->title = "titre de test";
+
+$posts = $app->getTable('Posts');
 
 
-$app2 = App\App::getInstance();
-echo $app2->title;
+
+
+
 
 
 
