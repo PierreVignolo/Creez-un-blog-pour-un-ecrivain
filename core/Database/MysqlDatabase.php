@@ -23,7 +23,7 @@ class MysqlDatabase extends Database
     private function getPDO()
     {
         if ($this->pdo === null) {
-            $pdo = new PDO('mysql:dbname=structure_type_php;host=localhost', 'root', 'root');
+            $pdo = new PDO('mysql:dbname=structure_type_php;host=localhost;charset=utf8', 'root', 'root');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
         }
@@ -49,11 +49,16 @@ class MysqlDatabase extends Database
         return $datas;
     }
 
-    public function prepare($statement, $attributes, $class_name, $one = false)
+    public function prepare($statement, $attributes, $class_name = null, $one = false)
     {
         $req = $this->getPDO()->prepare($statement);
         $req->execute($attributes);
-        $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+        if ($class_name === null) {
+            $req->setFetchMode(PDO::FETCH_OBJ);
+        }
+        else {
+            $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+        }
         
         if ($one) {
             $datas = $req->fetch();
