@@ -22,6 +22,10 @@ elseif ($page === 'posts.category') {
 elseif ($page === 'posts.single') {
     require ROOT . '/pages/posts/single.php';
 }
+elseif ($page === 'login') {
+    require ROOT . '/pages/users/login.php';
+}
+
 $content = ob_get_clean();
 require ROOT . '/pages/templates/default.php'
 
