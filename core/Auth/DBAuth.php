@@ -12,6 +12,14 @@ class DBAuth
         $this->db = $db;
     }
 
+    public function getUserId()
+    {
+        if ($this->logged()) {
+            return $_SESSION['auth'];
+        }
+        return false;
+    }
+
     /**
      * Undocumented function
      *
