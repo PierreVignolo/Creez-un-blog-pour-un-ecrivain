@@ -28,8 +28,8 @@ if ($page === 'home') {
 elseif ($page === 'posts.edit') {
     require ROOT . '/pages/admin/posts/edit.php';
 }
-elseif ($page === 'posts.single') {
-    require ROOT . '/pages/admin/posts/single.php';
+elseif ($page === 'posts.add') {
+    require ROOT . '/pages/admin/posts/add.php';
 }
 $content = ob_get_clean();
 require ROOT . '/pages/templates/default.php'

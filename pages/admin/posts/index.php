@@ -24,3 +24,7 @@ $posts = App::getInstance()->getTable('Post')->all();
 <?php endforeach; ?>
     </tbody>
 </table>
+
+<p>
+    <a href="?p=posts.add" class="btn btn-success">Ajouter</a>
+</p>
