@@ -27,7 +27,7 @@ elseif ($page === 'login') {
 }
 
 $content = ob_get_clean();
-require ROOT . '/pages/templates/default.php'
+require ROOT . '/pages/templates/public.php'
 
 ?>
 

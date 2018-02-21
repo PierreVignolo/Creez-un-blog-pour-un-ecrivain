@@ -31,15 +31,11 @@ elseif ($page === 'posts.edit') {
 elseif ($page === 'posts.add') {
     require ROOT . '/pages/admin/posts/add.php';
 }
+elseif ($page === 'posts.delete') {
+    require ROOT . '/pages/admin/posts/delete.php';
+}
+
 $content = ob_get_clean();
-require ROOT . '/pages/templates/default.php'
+require ROOT . '/pages/templates/admin.php'
 
 ?>
-
-
-
-
-
-
-
-
