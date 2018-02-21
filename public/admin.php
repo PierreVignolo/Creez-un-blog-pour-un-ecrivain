@@ -22,9 +22,12 @@ if (!$auth->logged()) {
 }
 
 ob_start();
+
 if ($page === 'home') {
-    require ROOT . '/pages/admin/posts/index.php';
+    require ROOT . '/pages/admin/index.php';
 }
+
+// Les Pages Gestion Article
 elseif ($page === 'posts.edit') {
     require ROOT . '/pages/admin/posts/edit.php';
 }
@@ -33,6 +36,17 @@ elseif ($page === 'posts.add') {
 }
 elseif ($page === 'posts.delete') {
     require ROOT . '/pages/admin/posts/delete.php';
+}
+
+// Les Pages Gestion Catégorie
+elseif ($page === 'categories.edit') {
+    require ROOT . '/pages/admin/categories/edit.php';
+}
+elseif ($page === 'categories.add') {
+    require ROOT . '/pages/admin/categories/add.php';
+}
+elseif ($page === 'categories.delete') {
+    require ROOT . '/pages/admin/categories/delete.php';
 }
 
 $content = ob_get_clean();
