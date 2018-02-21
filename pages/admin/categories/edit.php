@@ -7,7 +7,7 @@ if (!empty($_POST)) {
 
     if ($result) {
         ?>
-        <div class="alert alert-success">la Catégorie a bien été modifier</div>
+        <div class="alert alert-success">la Catégorie a bien été modifiée</div>
         <?php
     }
 }

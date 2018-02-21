@@ -1,7 +1,7 @@
 <?php
-$table = App::getInstance()->getTable('Category');
+$categoryTable = App::getInstance()->getTable('Category');
 if (!empty($_POST)) {
-    $result = $table->create([
+    $result = $categoryTable->create([
         'titre' => $_POST['titre']
     ]);
 

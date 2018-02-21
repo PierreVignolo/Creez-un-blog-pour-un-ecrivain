@@ -9,7 +9,7 @@ if (!empty($_POST)) {
 
     if ($result) {
         ?>
-        <div class="alert alert-success">l'article a bien été modifier</div>
+        <div class="alert alert-success">l'article a bien été modifié</div>
         <?php
     }
 }
