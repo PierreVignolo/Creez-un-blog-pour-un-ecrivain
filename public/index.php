@@ -12,22 +12,23 @@ else {
     $page = 'home';
 }
 
-ob_start();
+
 if ($page === 'home') {
-    require ROOT . '/pages/posts/home.php';
+    $controller = new \App\Controller\Postscontroller();
+    $controller->index();
 }
 elseif ($page === 'posts.category') {
-    require ROOT . '/pages/posts/category.php';
+    $controller = new \App\Controller\Postscontroller();
+    $controller->category();
 }
 elseif ($page === 'posts.single') {
-    require ROOT . '/pages/posts/single.php';
+    $controller = new \App\Controller\Postscontroller();
+    $controller->single();
 }
 elseif ($page === 'login') {
-    require ROOT . '/pages/users/login.php';
+    $controller = new \App\Controller\Userscontroller();
+    $controller->login();
 }
-
-$content = ob_get_clean();
-require ROOT . '/pages/templates/public.php'
 
 ?>
 
