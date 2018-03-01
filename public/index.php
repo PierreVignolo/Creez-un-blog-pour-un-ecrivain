@@ -29,6 +29,10 @@ elseif ($page === 'login') {
     $controller = new \App\Controller\Userscontroller();
     $controller->login();
 }
+elseif ($page === 'admin.posts.index') {
+    $controller = new \App\Controller\Admin\PostsController();
+    $controller->index();
+}
 
 ?>
 

@@ -1,8 +1,3 @@
-<?php
-$posts = App::getInstance()->getTable('Post')->all();
-$categories = App::getInstance()->getTable('Category')->all();
-?>
-
 <section>
     <h1>Administrer les articles</h1>
 
@@ -36,7 +31,7 @@ $categories = App::getInstance()->getTable('Category')->all();
     </p>
 </section>
 
-<section>
+<!-- <section>
     <h1>Administrer les Catégories</h1>
 
 <table class="table">
@@ -67,4 +62,4 @@ $categories = App::getInstance()->getTable('Category')->all();
 <p>
     <a href="?p=categories.add" class="btn btn-success">Ajouter</a>
 </p>
-</section>
+</section> -->
