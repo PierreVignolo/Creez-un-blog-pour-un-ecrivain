@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href=admin.php>Project name</a>
+          <a class="navbar-brand" href=?p=admin.posts.index>Project name</a>
         </div>
         <!--<div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

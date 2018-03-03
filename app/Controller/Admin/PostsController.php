@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use Core\HTML\BootstrapForm;
 
 
-class PostsController extends AppController
+class PostsController extends AdminController
 {
 
     public function __construct() {

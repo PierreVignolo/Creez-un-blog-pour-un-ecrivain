@@ -49,8 +49,6 @@ class Table
 
     public function delete($id)
     {
-        $sql_part = implode(', ',$sql_parts);
-
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
