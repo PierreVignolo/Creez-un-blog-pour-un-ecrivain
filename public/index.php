@@ -9,30 +9,21 @@ if (isset($_GET['p'])) {
     $page = $_GET['p'];
 }
 else {
-    $page = 'home';
+    $page = 'posts.index';
 }
 
 
-if ($page === 'home') {
-    $controller = new \App\Controller\Postscontroller();
-    $controller->index();
+$page = explode('.', $page);
+if($page[0] == 'admin')
+{
+    $controller = '\App\Controller\Admin\\' . ucfirst($page[1]) . 'Controller';
+    $action = $page[2];
+} else {
+    $controller = '\App\Controller\\' . ucfirst($page[0]) . 'Controller';
+    $action = $page[1];
 }
-elseif ($page === 'posts.category') {
-    $controller = new \App\Controller\Postscontroller();
-    $controller->category();
-}
-elseif ($page === 'posts.single') {
-    $controller = new \App\Controller\Postscontroller();
-    $controller->single();
-}
-elseif ($page === 'login') {
-    $controller = new \App\Controller\Userscontroller();
-    $controller->login();
-}
-elseif ($page === 'admin.posts.index') {
-    $controller = new \App\Controller\Admin\PostsController();
-    $controller->index();
-}
+$controller = new $controller();
+$controller->$action();
 
 ?>
 
