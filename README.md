@@ -1,1 +1,1 @@
-# Structure_type_php avec du Design Patterns Simples
+# Structure_type_php avec en MVC
