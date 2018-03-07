@@ -1,7 +1,7 @@
 <section>
-    <h1>Administrer les articles</h1>
+    <h1 class="title is-1">Administrer les articles</h1>
 
-    <table class="table">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
             <tr>
                 <td>ID</td>
@@ -15,10 +15,10 @@
                 <td><?= $post->id; ?></td>
                 <td><?= $post->titre; ?></td>
                 <td>
-                    <a href="?p=admin.posts.edit&id=<?= $post->id; ?>" class="btn btn-primary">Editer</a>
+                    <a href="?p=admin.posts.edit&id=<?= $post->id; ?>" class="button is-primary">Editer</a>
                     <form action="?p=posts.delete" method="post" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $post->id ?>">
-                        <button type="submit" class="btn btn-danger" href="?p=admin.posts.delete&id=<?= $post->id; ?>">Supprimer</button>
+                        <button type="submit" class="button is-danger" href="?p=admin.posts.delete&id=<?= $post->id; ?>">Supprimer</button>
                     </form>
                 </td>
             </tr>
@@ -26,10 +26,9 @@
         </tbody>
     </table>
 
-    <p>
-        <a href="?p=admin.posts.add" class="btn btn-success">Ajouter</a>
-    </p>
-</section>
+            <a href="?p=admin.posts.add" class="button is-success">Ajouter</a>
+    
+    </section>
 
 <!-- <section>
     <h1>Administrer les Catégories</h1>

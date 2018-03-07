@@ -1,54 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title><?= App::getInstance()->title; ?></title>
+    <!-- HEAD -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+        <link rel="stylesheet" href="../public/css/main.css">
+        <title>Document</title>
+    </head>
+    <!-- END HEAD -->
 
-    <!-- Bootstrap core CSS -->
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <!-- BODY -->    
+    <body>
+
+        <nav class="navbar is-fixed-top is-info">
+            <div class="container">
+                <div class="navbar-brand">
+                    <span class="navbar-item logomenu">
+                        Menu
+                    </span>
+                <div class="navbar-burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                </div>
 
 
-  </head>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="https://bulma.io/">
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                    </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="/documentation/overview/start/">
+                    Docs
+                    </a>
+                    <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/documentation/overview/start/">
+                        Overview
+                    </a>
+                </div>
+                </div>
+            </div>    
+        </nav>
 
-  <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href=?p=admin.posts.index>Project name</a>
+        <div class="container" style="padding-top:6.25em;">
+            <?= $content ?>
         </div>
-        <!--<div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div> --><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container">
-
-      <div class="starter-template" style="padding-top:6.25em;" >
-        <?= $content; ?>
-      </div>
-
-    </div><!-- /.container -->
 
 
-   
-  </body>
+
+
+        <?= require ROOT . '/public/js/js.php' ?>
+
+        
+    </body>
+    <!-- END BODY -->
 </html>

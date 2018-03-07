@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use Core\HTML\BootstrapForm;
+use Core\HTML\BulmaForm;
 
 
 class PostsController extends AdminController
@@ -35,7 +35,7 @@ class PostsController extends AdminController
             }
         }
         $categories = $this->Category->extract('id', 'titre');
-        $form = new BootstrapForm($_POST);
+        $form = new BulmaForm($_POST);
         $this->render('admin.posts.edit', compact('categories', 'form'));
 
     }
@@ -56,7 +56,7 @@ class PostsController extends AdminController
         }
         $post = $this->Post->find($_GET['id']);
         $categories = $this->Category->extract('id', 'titre');
-        $form = new BootstrapForm($post);
+        $form = new BulmaForm($post);
         $this->render('admin.posts.edit', compact('categories', 'form'));
 
 

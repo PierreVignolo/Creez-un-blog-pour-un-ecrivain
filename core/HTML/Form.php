@@ -60,7 +60,7 @@ class Form{
      * @return string
      */
     public function submit(){
-        return $this->surround('<button type="submit">Envoyer</button>');
+        return $this->surround('<button type="submit">login</button>');
     }
 
 }

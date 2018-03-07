@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use Core\HTML\BootstrapForm;
+use Core\HTML\BulmaForm;
 
 class CategoriesController extends AdminController{
 
@@ -23,7 +23,7 @@ class CategoriesController extends AdminController{
             ]);
             return $this->index();
         }
-        $form = new BootstrapForm($_POST);
+        $form = new BulmaForm($_POST);
         $this->render('admin.categories.edit', compact('form'));
     }
 
@@ -35,7 +35,7 @@ class CategoriesController extends AdminController{
             return $this->index();
         }
         $category = $this->Category->find($_GET['id']);
-        $form = new BootstrapForm($category);
+        $form = new BulmaForm($category);
         $this->render('admin.categories.edit', compact('form'));
     }
 

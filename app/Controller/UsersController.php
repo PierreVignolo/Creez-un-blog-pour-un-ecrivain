@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App;
 use Core\Auth\DBAuth;
-use Core\HTML\BootstrapForm;
+use Core\HTML\BulmaForm;
+
 
 class UsersController extends AppController
 {
@@ -20,7 +21,7 @@ class UsersController extends AppController
                 $errors = true;
             }
         }
-        $form = new BootstrapForm($_POST);
+        $form = new BulmaForm($_POST);
         $this->render('users.login', compact('form', 'errors'));
     }
 
