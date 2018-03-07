@@ -9,6 +9,7 @@ use App\Controller\AppController;
 
 class AdminController extends AppController
 {
+    protected $template = 'admin';
 
     public function __construct() {
         parent::__construct();
@@ -18,6 +19,16 @@ class AdminController extends AppController
         if (!$auth->logged()) {
             $this->forbidden();   
         }
+        $this->loadModel('Post');
+        $this->loadModel('Category');
+    }
+
+    public function index()
+    {
+        $items = $this->Category->all();
+        $posts = $this->Post->all();
+        
+        $this->render('admin.index', compact('posts', 'items'));
     }
 
 }

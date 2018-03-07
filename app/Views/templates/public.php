@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
         <link rel="stylesheet" href="../public/css/main.css">
-        <title>Document</title>
+        <title><?= App::getInstance()->title; ?></title>
     </head>
     <!-- END HEAD -->
 

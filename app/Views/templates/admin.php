@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
         <link rel="stylesheet" href="../public/css/main.css">
-        <title>Document</title>
+        <title><?= App::getInstance()->title; ?></title>
     </head>
     <!-- END HEAD -->
 
@@ -31,7 +31,7 @@
 
             <div id="navMenu" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="https://bulma.io/">
+                    <a class="navbar-item" href="?p=admin.index">
                         <span class="icon">
                             <i class="fas fa-home"></i>
                         </span>

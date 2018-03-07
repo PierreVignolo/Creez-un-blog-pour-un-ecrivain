@@ -47,6 +47,6 @@ class PostsController extends AppController
         
         $this->render('posts.single', compact('article'));
 
-        }
+    }
 
 }
