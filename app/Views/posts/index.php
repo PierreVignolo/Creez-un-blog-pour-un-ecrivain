@@ -24,7 +24,7 @@
         <ul>
         <?php foreach ($categories as $categorie): ?>
 
-            <li class="subtitle"><a href="<?= $categorie->url ?>"><?= $categorie->titre; ?></a></li>
+            <li><a href="<?= $categorie->url ?>"><?= $categorie->titre; ?></a></li>
 
         <?php endforeach ?>
         </ul>

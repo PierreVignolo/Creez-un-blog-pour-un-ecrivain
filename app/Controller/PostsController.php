@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Core\HTML\BulmaForm;
 use Core\Controller\Controller;
 
 class PostsController extends AppController
@@ -36,7 +37,6 @@ class PostsController extends AppController
     public function single()
     {
         
-
         $article = $this->Post->findWithCategory($_GET['id']);
 
 
@@ -44,8 +44,8 @@ class PostsController extends AppController
             $this->notFound();
         }
         $this->title = $article->titre;
-        
-        $this->render('posts.single', compact('article'));
+        $form = new BulmaForm();      
+        $this->render('posts.single', compact('form', 'article'));
 
     }
 

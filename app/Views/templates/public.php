@@ -49,7 +49,7 @@
             </div>    
         </nav>
 
-        <div class="container" style="padding-top:6.25em;">
+        <div class="container" style="padding-top:4em;">
             <?= $content ?>
         </div>
 

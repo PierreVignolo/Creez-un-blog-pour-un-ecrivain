@@ -11,11 +11,6 @@ class CategoriesController extends AdminController{
         $this->loadModel('Category');
     }
 
-    public function index(){
-        $items = $this->Category->all();
-        $this->render('admin.categories.index', compact('items'));
-    }
-
     public function add(){
         if (!empty($_POST)) {
             $result = $this->Category->create([

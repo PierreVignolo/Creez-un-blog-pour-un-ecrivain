@@ -16,14 +16,13 @@ class BulmaForm extends Form{
      * @param array $options
      * @return string
      */
-    public function input($name, $label, $options = [], $places = []){
-        $place = isset($places['place']) ? $places['place'] : '';
+    public function input($name, $label, $options = []){
         $type = isset($options['type']) ? $options['type'] : 'text';
         $label = '<label class="label">' . $label . '</label>';
         if($type === 'textarea'){
             $input = '<textarea class="textarea" rows="10" name="' . $name . '" class="form-control">' . $this->getValue($name) . '</textarea>';
         } else{
-            $input = '<input type="' . $type . '" placeholder="' . $place . '" name="' . $name . '" value="' . $this->getValue($name) . '" class="input">';
+            $input = '<input type="' . $type . '" name="' . $name . '" value="' . $this->getValue($name) . '" class="input">';
         }
         return $this->surround($label . $input);
     }
@@ -45,8 +44,9 @@ class BulmaForm extends Form{
     /**
      * @return string
      */
-    public function submit($name = 'test'){
-        return $this->surround('<p class="control"><button class="button is-success">'. $name . '</button></p>');
+    public function submit($name = 'Envoyer', $class='is-success'){
+        
+        return $this->surround('<p class="control"><button class="button '. $class .'">'. $name . '</button></p>');
     }
 
     

@@ -17,7 +17,7 @@
                 <td>
                     <a href="?p=admin.posts.edit&id=<?= $post->id; ?>" class="button is-primary">Editer</a>
                     <a href="?p=posts.single&id=<?= $post->id; ?>" class="button is-link">Voir</a>
-                    <form action="?p=posts.delete" method="post" style="display: inline;">
+                    <form action="?p=admin.posts.delete" method="post" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $post->id ?>">
                         <button type="submit" class="button is-danger" href="?p=admin.posts.delete&id=<?= $post->id; ?>">Supprimer</button>
                     </form>
