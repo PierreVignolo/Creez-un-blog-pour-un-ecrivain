@@ -49,14 +49,14 @@
             </div>    
         </nav>
 
-        <div class="container" style="padding-top:4em;">
+        <div class="container" style="padding-top:6.25em;">
             <?= $content ?>
         </div>
 
 
 
 
-        <?= require ROOT . '/public/js/js.php' ?>
+        <?= require ROOT . '/public/js/js.php'; ?>
 
         
     </body>
