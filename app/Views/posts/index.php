@@ -10,7 +10,9 @@
 
                 <p class="subtitle is-3"><em><?= $post->categorie ?></em></p>
 
-                <p class="subtitle is-5"><?= $post->extrait; ?></p>
+                <div class="subtitle is-5">
+                    <?= $post->extrait; ?>
+                </div>
 
             </div>
             

@@ -3,9 +3,15 @@
 */
 
 .logomenu {
-    display: none;
+  display: none;
 }
 
 .section {
   padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+p {
+  display: block;
+  margin: 1.12em 0;
 }

@@ -54,11 +54,7 @@
         </div>
 
 
-
-
-        <?= require ROOT . '/public/js/js.php' ?>
-
-        
+      
     </body>
     <!-- END BODY -->
 </html>
