@@ -18,7 +18,7 @@ class PostTable extends Table
     public function last()
     {
         return $this->query ("
-            SELECT articles.id, articles.titre, articles.contenu, categories.titre as categorie 
+            SELECT articles.id, articles.titre, articles.contenu, categories.titre as categorie, DATE_FORMAT(date, '%d/%m/%Y %Hh%imin%ss') AS date
             FROM articles 
             LEFT JOIN categories ON category_id = categories.id
             ORDER BY articles.date DESC
