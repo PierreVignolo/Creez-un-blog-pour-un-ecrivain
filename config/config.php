@@ -1,4 +1,6 @@
 <?php
+
+// Config type de MAMP
 return array(
     "db_user" => "root",
     "db_pass" => "root",
