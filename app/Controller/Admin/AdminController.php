@@ -26,7 +26,7 @@ class AdminController extends AppController
     public function index()
     {
         $items = $this->Category->all();
-        $posts = $this->Post->all();
+        $posts = $this->Post->last();
         
         $this->render('admin.index', compact('posts', 'items'));
     }

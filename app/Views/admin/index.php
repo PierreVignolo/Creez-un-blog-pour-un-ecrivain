@@ -5,16 +5,20 @@
         <thead>
             <tr class="subtitle">
                 <th>ID</th>
+                <th>Date et Heure</th>
                 <th>Titre</th>
-                <th>Actions</th>
+                <th>Catégorie</th>
+                <th class="has-text-centered">Actions</th>
             </tr>    
         </thead>
         <tbody>
             <?php foreach($posts as $post): ?>
             <tr>
                 <td><?= $post->id; ?></td>
+                <td><?= $post->date_heure; ?></td>
                 <td><?= $post->titre; ?></td>
-                <td>
+                <td><?= $post->categorie ?></td>
+                <td class='has-text-centered'>
                     <a href="?p=admin.posts.edit&id=<?= $post->id; ?>" class="button is-primary">Editer</a>
                     <a href="?p=posts.single&id=<?= $post->id; ?>" class="button is-link">Voir</a>
                     <form action="?p=admin.posts.delete" method="post" style="display: inline;">
@@ -23,7 +27,7 @@
                     </form>
                 </td>
             </tr>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 
@@ -39,7 +43,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Titre</th>
-                    <th>Actions</th>
+                    <th class="has-text-centered">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,7 +51,7 @@
                 <tr>
                     <td><?= $category->id; ?></td>
                     <td><?= $category->titre; ?></td>
-                    <td>
+                    <td class="has-text-centered">
                         <a class="button is-primary" href="?p=admin.categories.edit&id=<?= $category->id; ?>">Editer</a>
                         <a href="?p=posts.category&id=<?= $category->id; ?>" class="button is-link">Voir</a>
                         <form action="?p=admin.categories.delete" method="post" style="display: inline;">
