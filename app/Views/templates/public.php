@@ -53,6 +53,10 @@
             <?= $content ?>
         </div>
 
+        <footer class="section has-text-centered">
+            © Projet 4 Développeur Web Junior 2018 by Pierre Vignolo
+        </footer>
+
 
         
      

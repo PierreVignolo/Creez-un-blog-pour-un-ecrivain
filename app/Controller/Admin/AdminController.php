@@ -21,14 +21,16 @@ class AdminController extends AppController
         }
         $this->loadModel('Post');
         $this->loadModel('Category');
+        $this->loadModel('Comment');
     }
 
     public function index()
     {
         $items = $this->Category->all();
         $posts = $this->Post->last();
+        $comments = $this->Comment->all();
         
-        $this->render('admin.index', compact('posts', 'items'));
+        $this->render('admin.index', compact('posts', 'items', 'comments'));
     }
 
 }

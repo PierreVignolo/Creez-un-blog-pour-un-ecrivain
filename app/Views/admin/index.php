@@ -70,3 +70,33 @@
             <a href="?p=admin.categories.add" class="button is-success">Ajouter</a>
         </p>
 </section>
+
+    <section class="box">
+        <h1 class="title is-1">Administrer des commentaires</h1>
+
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titre</th>
+                    <th class="has-text-centered">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($comments as $comment): ?>
+                <tr>
+                    <td><?= $comment->id; ?></td>
+                    <td><?= $comment->pseudo; ?></td>
+                    <td class="has-text-centered">
+                        <a class="button is-primary" href="?p=admin.comment.edit&id=<?= $comment->id; ?>">Editer</a>
+                        <form action="?p=admin.comment.delete" method="post" style="display: inline;">
+                            <input type="hidden" name="id" value="<?= $comment->id ?>">
+                            <button type="submit" class="button is-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+
+        </table>
+</section>
