@@ -23,3 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+$notif = $('.notification');
+
+function supprimer() {
+    $notif.remove();
+}

@@ -12,6 +12,7 @@ class PostsController extends AppController
         parent::__construct();
         $this->loadModel('Post');
         $this->loadModel('Category');
+        $this->loadModel('Comment');
     }
     
     public function index()
@@ -38,14 +39,20 @@ class PostsController extends AppController
     {
         
         $article = $this->Post->findWithCategory($_GET['id']);
+        $comment = $this->Comment->lastByComment($_GET['id']);
 
 
         if ($article === false) {
             $this->notFound();
         }
         $this->title = $article->titre;
-        $form = new BulmaForm();      
-        $this->render('posts.single', compact('form', 'article'));
+        $form = new BulmaForm();
+        $flash = false;  
+        if (isset($_SESSION['flash'])) {
+            $flash = $_SESSION['flash'];
+            unset($_SESSION['flash']);
+        }    
+        $this->render('posts.single', compact('form', 'article', 'comment', 'flash'));
 
     }
 

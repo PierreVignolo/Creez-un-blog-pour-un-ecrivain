@@ -16,7 +16,7 @@ class UsersController extends AppController
         if (!empty ($_POST)) {
             $auth = new DBAuth(App::getInstance()->getDb());
             if ($auth->login(htmlspecialchars($_POST['username']), htmlspecialchars($_POST['password']))) {
-                header('Location: ?p=admin.index');
+                header('Location: ?p=admin.posts.index');
             } else {
                 $errors = true;
             }
