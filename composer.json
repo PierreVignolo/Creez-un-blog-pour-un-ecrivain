@@ -1,13 +1,13 @@
 {
     "name": "pierre/creez-un-blog-pour-un-ecrivain",
-    "description": "Projet 4 d\u0000veloppeur web junior OpenClassrooms",
+    "description": "Projet 4 développeur web junior OpenClassrooms",
     "require": {
         "michelf/php-markdown": "^1.8"
     },
     "authors": [
         {
             "name": "Pierre Vignolo",
-            "email": "36164748+PierreVignolo@users.noreply.github.com"
+            "email": "developpeurweb@pierrevignolo.fr"
         }
     ]
 }
