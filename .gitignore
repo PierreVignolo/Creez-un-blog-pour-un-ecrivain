@@ -1,3 +1,5 @@
 # Ignorer le r�pertoire ''config'' :
 config/
 config/config.php
+
+/vendor/
