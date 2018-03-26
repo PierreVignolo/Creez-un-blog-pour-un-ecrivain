@@ -14,7 +14,7 @@ class CommentTable extends Table
     public function lastByComment($article_id)
     {
         return $this->query ("
-            SELECT comment.id, comment.pseudo, comment.contenu,
+            SELECT comment.id, comment.pseudo, comment.contenu, comment.signale,
             DATE_FORMAT(comment.date, '%d/%m/%Y') AS date, 
             DATE_FORMAT(comment.date, '%Hh %imin') AS heure,
             DATE_FORMAT(comment.date, 'Le %d/%m/%Y à %Hh%i') AS date_heure 

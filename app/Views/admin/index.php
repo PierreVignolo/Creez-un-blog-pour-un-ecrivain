@@ -72,23 +72,28 @@
 </section>
 
     <section class="box">
-        <h1 class="title is-1">Administrer des commentaires</h1>
+        <h1 class="title is-1">Administrer les commentaires</h1>
 
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Titre</th>
+                    <th>ID de l'article</th>
+                    <th>Pseudo</th>
+                    <th>Contenu</th>
+                    <th>Nombre de signalement</th>
                     <th class="has-text-centered">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($comments as $comment): ?>
                 <tr>
-                    <td><?= $comment->id; ?></td>
+                    <td><?= $comment->article_id; ?></td>
                     <td><?= $comment->pseudo; ?></td>
+                    <td><?= $comment->contenu; ?></td>
+                    <td><?= $comment->signale; ?></td>
                     <td class="has-text-centered">
                         <a class="button is-primary" href="?p=admin.comment.edit&id=<?= $comment->id; ?>">Editer</a>
+                        <a href="?p=posts.single&id=<?= $comment->article_id; ?>" class="button is-link">Voir</a>
                         <form action="?p=admin.comment.delete" method="post" style="display: inline;">
                             <input type="hidden" name="id" value="<?= $comment->id ?>">
                             <button type="submit" class="button is-danger">Supprimer</button>

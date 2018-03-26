@@ -16,7 +16,8 @@ class CommentController extends AdminController{
         if (!empty($_POST)) {
             $result = $this->Comment->update($_GET['id'], [
                 'pseudo' => $_POST['pseudo'],
-                'contenu' => $_POST['contenu']
+                'contenu' => $_POST['contenu'],
+                'signale' => $_POST['signale']
             ]);
             if($result){
                 return $this->index();

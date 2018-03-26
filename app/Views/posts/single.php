@@ -19,16 +19,19 @@
 <section>
     <?= $flash ?>
 
-    <p class="subtitle is-5">Vos commentaires</p>
+    <p class="subtitle is-4">Vos commentaires</p>
     <?php foreach ($comment as $comment): ?>
-    <p class="subtitle is-5"><strong>[<?= $comment->date_heure; ?>]</strong> <?= $comment->pseudo; ?> : <?= $comment->contenu; ?></p>
+    <p class="subtitle is-5 zero-bottom has-text-weight-semibold"><?= $comment->pseudo; ?>,</p>
+    <p class="is-italic has-text-grey zero-top"><?= $comment->date_heure; ?></p> 
+    <p class="subtitle is-5"><?= $comment->contenu; ?></p>
+    <div class="has-text-right"><button class="button is-warning is-small has-text-danger">Signaler</button></div>
     <?php endforeach; ?>
 
 </section>
 
 <section class="section">
     <form method="post" action="?p=comment.add">
-        <p class="subtitle is-5">Laissez votre commentaire</p>
+        <p class="subtitle is-4">Laissez votre commentaire</p>
         <?= $form->input('pseudo', 'Pseudo'); ?>
         <?= $form->input('contenu', 'Contenu', ['type' => 'textarea']); ?>
         <input type="hidden" name="id" value="<?= $article->id ?>">
