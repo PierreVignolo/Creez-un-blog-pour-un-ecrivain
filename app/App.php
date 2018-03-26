@@ -18,10 +18,7 @@ class App{
 
     public static function load(){
         session_start();
-        require ROOT . '/app/Autoloader.php';
-        App\Autoloader::register();
-        require ROOT . '/core/Autoloader.php';
-        Core\Autoloader::register();
+        require ROOT . '/vendor/autoload.php';
     }
 
     public function getTable($name){
