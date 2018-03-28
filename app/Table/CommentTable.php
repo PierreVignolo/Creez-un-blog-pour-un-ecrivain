@@ -24,4 +24,9 @@ class CommentTable extends Table
             ORDER BY comment.date DESC
         ", [$article_id]);
     }
+
+    public function deleteByArticleId($id)
+    {
+        return $this->query("DELETE FROM comment WHERE article_id = ?", [$id], true);
+    }
 }

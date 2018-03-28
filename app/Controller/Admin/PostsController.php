@@ -9,6 +9,7 @@ class PostsController extends AdminController{
     public function __construct(){
         parent::__construct();
         $this->loadModel('Post');
+        $this->loadModel('Comment');
     }
 
     public function add(){
@@ -49,6 +50,7 @@ class PostsController extends AdminController{
     public function delete(){
         if (!empty($_POST)) {
             $result = $this->Post->delete($_POST['id']);
+            $this->Comment->deleteByArticleId($_POST['id']);
             return $this->index();
         }
     }
