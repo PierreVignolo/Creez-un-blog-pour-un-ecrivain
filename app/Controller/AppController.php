@@ -12,6 +12,10 @@ class AppController extends Controller
     
     public function __construct() {
         $this->viewPath = ROOT . '/app/Views/';
+
+        $this->loadModel('Post');
+        $this->loadModel('Category');
+        $this->loadModel('Comment');
     }
 
     protected function loadModel($model_name)

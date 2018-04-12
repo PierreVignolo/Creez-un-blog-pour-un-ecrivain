@@ -6,12 +6,6 @@ use Core\HTML\BulmaForm;
 
 class CommentController extends AdminController{
 
-    public function __construct(){
-        parent::__construct();
-        $this->loadModel('Comment');
-        $this->loadModel('Post');
-    }
-
     public function edit(){
         if (!empty($_POST)) {
             $result = $this->Comment->update($_GET['id'], [
@@ -20,7 +14,7 @@ class CommentController extends AdminController{
                 'signale' => $_POST['signale']
             ]);
             if($result){
-                return $this->index();
+                header('Location: ?p=admin.index');
             }
         }
         $comment = $this->Comment->find($_GET['id']);
@@ -31,7 +25,7 @@ class CommentController extends AdminController{
     public function delete(){
         if (!empty($_POST)) {
             $result = $this->Comment->delete($_POST['id']);
-            return $this->index();
+            header('Location: ?p=admin.index');
         }
     }
 

@@ -6,11 +6,6 @@ use Core\HTML\BulmaForm;
 
 class CommentController extends AppController{
 
-    public function __construct(){
-        parent::__construct();
-        $this->loadModel('Comment');
-    }
-
     public function add(){
         if (!empty($_POST['pseudo']) && !empty($_POST['contenu']) && !empty($_POST['id'])) {
             $result = $this->Comment->create([

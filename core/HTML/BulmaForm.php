@@ -16,11 +16,11 @@ class BulmaForm extends Form{
      * @param array $options
      * @return string
      */
-    public function input($name, $label, $options = []){
+    public function input($name, $label, $options = [], $admin=''){
         $type = isset($options['type']) ? $options['type'] : 'text';
         $label = '<label class="label">' . $label . '</label>';
         if($type === 'textarea'){
-            $input = '<textarea class="textarea" rows="10" name="' . $name . '" class="form-control">' . $this->getValue($name) . '</textarea>';
+            $input = '<textarea class="textarea ' . $admin .'" rows="10" name="' . $name . '" class="form-control">' . $this->getValue($name) . '</textarea>';
         } else{
             $input = '<input type="' . $type . '" name="' . $name . '" value="' . $this->getValue($name) . '" class="input">';
         }

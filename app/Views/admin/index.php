@@ -17,7 +17,7 @@
                 <td><?= $post->id; ?></td>
                 <td><?= $post->date_heure; ?></td>
                 <td><?= $post->titre; ?></td>
-                <td><?= $post->categorie ?></td>
+                <td><?= $post->categorie; ?></td>
                 <td class='has-text-centered'>
                     <a href="?p=admin.posts.edit&id=<?= $post->id; ?>" class="button is-primary">Editer</a>
                     <a href="?p=posts.single&id=<?= $post->id; ?>" class="button is-link">Voir</a>

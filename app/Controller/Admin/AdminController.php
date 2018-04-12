@@ -19,9 +19,6 @@ class AdminController extends AppController
         if (!$auth->logged()) {
             $this->forbidden();   
         }
-        $this->loadModel('Post');
-        $this->loadModel('Category');
-        $this->loadModel('Comment');
     }
 
     public function index()

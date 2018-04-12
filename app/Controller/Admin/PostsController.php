@@ -6,12 +6,6 @@ use Core\HTML\BulmaForm;
 
 class PostsController extends AdminController{
 
-    public function __construct(){
-        parent::__construct();
-        $this->loadModel('Post');
-        $this->loadModel('Comment');
-    }
-
     public function add(){
         if (!empty($_POST)) {
             $result = $this->Post->create([
@@ -20,7 +14,7 @@ class PostsController extends AdminController{
                 'category_id' => $_POST['category_id']
             ]);
             if($result){
-                return $this->index();
+                header('Location: ?p=admin.index');
             }
         }
         $this->loadModel('Category');
@@ -37,11 +31,10 @@ class PostsController extends AdminController{
                 'category_id' => $_POST['category_id']
             ]);
             if($result){
-                return $this->index();
+                header('Location: ?p=admin.index');
             }
         }
         $post = $this->Post->find($_GET['id']);
-        $this->loadModel('Category');
         $categories = $this->Category->extract('id', 'titre');
         $form = new BulmaForm($post);
         $this->render('admin.posts.edit', compact('categories', 'form'));
@@ -51,7 +44,7 @@ class PostsController extends AdminController{
         if (!empty($_POST)) {
             $result = $this->Post->delete($_POST['id']);
             $this->Comment->deleteByArticleId($_POST['id']);
-            return $this->index();
+            header('Location: ?p=admin.index');
         }
     }
 
