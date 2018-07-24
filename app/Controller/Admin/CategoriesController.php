@@ -36,4 +36,19 @@ class CategoriesController extends AdminController{
         }
     }
 
+    public function category()
+    {
+
+        $categorie = $this->Category->find($_GET['id']) ;
+        \App::getInstance()->title = \App::getInstance()->title . ' - ' . $categorie->titre;
+
+        if ($categorie === false) {
+            $this->notFound();
+        }
+        $articles = $this->Post->lastByCategory($_GET['id']);
+        $categories = $this->Category->all();
+
+        $this->render('admin.categories.category', compact('categorie', 'articles', 'categories'));
+    }
+
 }

@@ -5,7 +5,7 @@ use Core\Database\MysqlDatabase;
 
 class App{
 
-    public $title = "Mon super site";
+    public $title = "Billet simple pour l'Alaska";
     private $db_instance;
     private static $_instance;
 

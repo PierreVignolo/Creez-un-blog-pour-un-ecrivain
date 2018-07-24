@@ -2,4 +2,6 @@
 config/
 config/config.php
 
+.idea
+
 /vendor/

@@ -39,7 +39,7 @@ $controller->$action();
 ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../public/js/bulma.js"></script>
+<script src="/js/bulma.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <script>

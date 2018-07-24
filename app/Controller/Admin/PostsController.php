@@ -17,7 +17,7 @@ class PostsController extends AdminController{
                 header('Location: ?p=admin.index');
             }
         }
-        $this->loadModel('Category');
+
         $categories = $this->Category->extract('id', 'titre');
         $form = new BulmaForm($_POST);
         $this->render('admin.posts.edit', compact('categories', 'form'));
@@ -46,6 +46,20 @@ class PostsController extends AdminController{
             $this->Comment->deleteByArticleId($_POST['id']);
             header('Location: ?p=admin.index');
         }
+    }
+
+    public function single()
+    {
+        $article = $this->Post->findWithCategory($_GET['id']);
+
+        \App::getInstance()->title = \App::getInstance()->title . ' - ' . $article->titre;
+
+        if ($article === false) {
+            $this->notFound();
+        }
+
+        $this->render('admin.posts.single', compact('article'));
+
     }
 
 }

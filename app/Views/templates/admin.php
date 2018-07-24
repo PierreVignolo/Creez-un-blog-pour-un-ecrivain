@@ -6,8 +6,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-        <link rel="stylesheet" href="../public/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+        <link rel="stylesheet" href="/css/main.css">
         <title><?= App::getInstance()->title; ?></title>
     </head>
     <!-- END HEAD -->
@@ -36,17 +36,11 @@
                             <i class="fas fa-home"></i>
                         </span>
                     </a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="/documentation/overview/start/">
-                    Docs
-                    </a>
-                    <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/documentation/overview/start/">
-                        Overview
+                    <a class="navbar-item" href="?p=posts.index">
+                        Retour au site
                     </a>
                 </div>
-                </div>
-            </div>    
+            </div>
         </nav>
 
         <div class="container" style="padding-top:6.25em;">

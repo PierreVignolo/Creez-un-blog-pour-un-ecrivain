@@ -26,6 +26,8 @@ class PostsController extends AppController
     {
 
         $categorie = $this->Category->find($_GET['id']) ;
+        \App::getInstance()->title = \App::getInstance()->title . ' - ' . $categorie->titre;
+
         if ($categorie === false) {
             $this->notFound();
         }
@@ -37,17 +39,18 @@ class PostsController extends AppController
 
     public function single()
     {
-        
         $article = $this->Post->findWithCategory($_GET['id']);
         $comment = $this->Comment->lastByComment($_GET['id']);
+
+        \App::getInstance()->title = \App::getInstance()->title . ' - ' . $article->titre;
 
 
         if ($article === false) {
             $this->notFound();
         }
-        $this->title = $article->titre;
+
         $form = new BulmaForm();
-        $flash = false;  
+        $flash = false;
         if (isset($_SESSION['flash'])) {
             $flash = $_SESSION['flash'];
             unset($_SESSION['flash']);
