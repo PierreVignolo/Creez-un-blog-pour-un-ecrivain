@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Core\HTML\BulmaForm;
-use Core\Controller\Controller;
 
 class PostsController extends AppController
 {
@@ -19,7 +18,12 @@ class PostsController extends AppController
     {
         $posts = $this->Post->last();
         $categories = $this->Category->all();
-        $this->render('posts.index', compact('posts', 'categories'));
+        $flash = false;
+        if (isset($_SESSION['flash'])) {
+            $flash = $_SESSION['flash'];
+            unset($_SESSION['flash']);
+        }
+        $this->render('posts.index', compact('posts', 'categories', 'flash'));
     }
 
     public function category()
@@ -58,5 +62,7 @@ class PostsController extends AppController
         $this->render('posts.single', compact('form', 'article', 'comment', 'flash'));
 
     }
+
+
 
 }

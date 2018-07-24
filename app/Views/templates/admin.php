@@ -4,7 +4,7 @@
     <!-- HEAD -->
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta id="viewport" content="initial-scale=1.0" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
         <link rel="stylesheet" href="/css/main.css">
@@ -21,24 +21,32 @@
                     <span class="navbar-item logomenu">
                         Menu
                     </span>
-                <div class="navbar-burger" data-target="navMenu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                    <div class="navbar-burger" data-target="navMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
 
-
-            <div id="navMenu" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="?p=admin.index">
-                        <span class="icon">
-                            <i class="fas fa-home"></i>
-                        </span>
-                    </a>
-                    <a class="navbar-item" href="?p=posts.index">
-                        Retour au site
-                    </a>
+                <div id="navMenu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="?p=admin.index">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                        </a>
+                        <a class="navbar-item" href="?p=posts.index">
+                            Retour au site
+                        </a>
+                    </div>
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="?p=users.logout">
+                            Déconnexion <br/>
+                            <span class="icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>

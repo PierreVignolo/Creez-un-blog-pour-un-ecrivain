@@ -23,6 +23,8 @@ class AdminController extends AppController
 
     public function index()
     {
+        \App::getInstance()->title = \App::getInstance()->title . ' - Admin';
+
         $items = $this->Category->all();
         $posts = $this->Post->last();
         $comments = $this->Comment->all();

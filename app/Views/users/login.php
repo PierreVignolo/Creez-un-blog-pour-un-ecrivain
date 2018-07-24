@@ -2,9 +2,7 @@
     <div class="notification is-danger">
         Identifiants Incorrects
     </div>
-<?php endif ?>    
-
-
+<?php endif ?>
 
 <form method="post">
     <?= $form->input('username', 'Pseudo') ?>

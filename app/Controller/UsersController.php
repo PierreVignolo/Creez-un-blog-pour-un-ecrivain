@@ -12,6 +12,8 @@ class UsersController extends AppController
 
     public function login()
     {
+        \App::getInstance()->title = \App::getInstance()->title . ' - Login';
+
         $errors = false;
         if (!empty ($_POST)) {
             $auth = new DBAuth(App::getInstance()->getDb());
@@ -23,6 +25,16 @@ class UsersController extends AppController
         }
         $form = new BulmaForm($_POST);
         $this->render('users.login', compact('form', 'errors'));
+    }
+
+    public function logout() {
+        $_SESSION["auth"] = NULL;
+        session_destroy();
+        $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Le commentaire a bien été rajouté</p>';
+        header("location: ?p=posts.index");
+
+
+
     }
 
 }

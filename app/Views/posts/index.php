@@ -1,5 +1,6 @@
+<?= $flash ?>
+
 <div class="columns">
-    
         <div class="column">
 
             <?php foreach ($posts as $post): ?>
