@@ -15,7 +15,7 @@ class PostsController extends AdminController{
             ]);
             if($result){
                 header('Location: ?p=admin.index');
-                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre article a bien été ajouté</p>';
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre billet a bien été ajouté</p>';
             }
         }
         $categories = $this->Category->extract('id', 'titre');
@@ -32,7 +32,7 @@ class PostsController extends AdminController{
             ]);
             if($result){
                 header('Location: ?p=admin.index');
-                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre article a bien été édité</p>';
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre billet a bien été édité</p>';
             }
         }
         $post = $this->Post->find($_GET['id']);
@@ -46,7 +46,7 @@ class PostsController extends AdminController{
             $result = $this->Post->delete($_POST['id']);
             $this->Comment->deleteByArticleId($_POST['id']);
             if ($result){
-                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre article a bien été supprimé</p>';
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre billet a bien été supprimé</p>';
                 header('Location: ?p=admin.index');
             }
         }

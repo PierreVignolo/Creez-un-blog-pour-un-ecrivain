@@ -1,7 +1,7 @@
 <?= $flash; ?>
 
 <div class="block box">
-    <h1 class="title is-1">Administrer les articles</h1>
+    <h1 class="title is-1">Administrer les billets</h1>
 
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
@@ -9,7 +9,7 @@
                 <th>ID</th>
                 <th>Date et Heure</th>
                 <th>Titre</th>
-                <th>Catégorie</th>
+                <th>Chapitre</th>
                 <th class="has-text-centered">Actions</th>
             </tr>
         </thead>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="block box">
-    <h1 class="title is-1">Administrer les catégories</h1>
+    <h1 class="title is-1">Administrer les chapitres</h1>
 
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>

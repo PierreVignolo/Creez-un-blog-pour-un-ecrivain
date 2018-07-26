@@ -1,7 +1,17 @@
 <?= $flash ?>
 
-<div class="columns">
-        <div class="column">
+<div class="block has-text-centered">
+    <h1 class="title is-1">
+        Bienvenue sur le blog <br>
+        'Billet simple pour l'Alaska'
+    </h1>
+    <p class="subtitle is-2"><em>de Jean Forteroche</em></p>
+</div>
+
+<div class="columns block">
+        <div class="column is-three-quarters">
+
+            <h4 class="title is-4">Les différents billets</h4>
 
             <?php foreach ($posts as $post): ?>
 
@@ -24,7 +34,9 @@
         </div>
 
 
-    <div class="column">
+    <div class="column has-text-right">
+
+        <h4 class="title is-4">Les Chapitres</h4>
 
         <ul>
         <?php foreach ($categories as $categorie): ?>
