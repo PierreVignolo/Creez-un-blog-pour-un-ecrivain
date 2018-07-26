@@ -35,7 +35,7 @@
                             <span class="icon">
                                 <i class="fas fa-home"></i>
                             </span>
-                            Accueil
+                            &nbsp; Accueil
                         </a>
                     </div>
                     <div class="navbar-end">
