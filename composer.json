@@ -1,0 +1,16 @@
+{
+    "name": "pierre/creez-un-blog-pour-un-ecrivain",
+    "description": "Projet 4 développeur web junior OpenClassrooms",
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app",
+            "Core\\" : "core"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pierre Vignolo",
+            "email": "developpeurweb@pierrevignolo.fr"
+        }
+    ]
+}

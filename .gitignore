@@ -1,0 +1,7 @@
+# Ignorer le repertoire ''config'' :
+config/
+config/config.php
+
+.idea
+
+/vendor/
