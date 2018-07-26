@@ -40,7 +40,7 @@ class CommentController extends AdminController{
             ]);
             if ($result){
                 header('location: ?p=admin.index');
-                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Le compteur des signalements a bien été mise à zero</p>';
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Le compteur des signalements a bien été mis à zero</p>';
             }
         }
     }
