@@ -1,4 +1,4 @@
-
+<?= $flash ?>
 <section class="section">
 
     <div class='hero is-danger is-small'>
@@ -17,7 +17,6 @@
 </section>
 
 <section>
-    <?= $flash ?>
 
     <p class="subtitle is-4">Vos commentaires</p>
     <?php foreach ($comment as $comment): ?>
