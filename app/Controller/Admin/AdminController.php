@@ -28,8 +28,14 @@ class AdminController extends AppController
         $items = $this->Category->all();
         $posts = $this->Post->last();
         $comments = $this->Comment->all();
+
+        $flash = false;
+        if (isset($_SESSION['flash'])) {
+            $flash = $_SESSION['flash'];
+            unset($_SESSION['flash']);
+        }
         
-        $this->render('admin.index', compact('posts', 'items', 'comments'));
+        $this->render('admin.index', compact('posts', 'items', 'comments', 'flash'));
     }
 
 }

@@ -11,7 +11,10 @@ class CategoriesController extends AdminController{
             $result = $this->Category->create([
                 'titre' => $_POST['titre'],
             ]);
-            header('Location: ?p=admin.index');
+            if ($result){
+                header('Location: ?p=admin.index');
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre catégorie a bien été ajouté</p>';
+            };
         }
         $form = new BulmaForm($_POST);
         $this->render('admin.categories.edit', compact('form'));
@@ -22,7 +25,10 @@ class CategoriesController extends AdminController{
             $result = $this->Category->update($_GET['id'], [
                 'titre' => $_POST['titre'],
             ]);
-            header('Location: ?p=admin.index');
+            if ($result){
+                header('Location: ?p=admin.index');
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre catégorie a bien été édité</p>';
+            }
         }
         $category = $this->Category->find($_GET['id']);
         $form = new BulmaForm($category);
@@ -32,7 +38,10 @@ class CategoriesController extends AdminController{
     public function delete(){
         if (!empty($_POST)) {
             $result = $this->Category->delete($_POST['id']);
-            header('Location: ?p=admin.index');
+            if ($result){
+                header('Location: ?p=admin.index');
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre catégorie a bien été supprimé</p>';
+            }
         }
     }
 

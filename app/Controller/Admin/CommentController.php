@@ -11,10 +11,10 @@ class CommentController extends AdminController{
             $result = $this->Comment->update($_GET['id'], [
                 'pseudo' => $_POST['pseudo'],
                 'contenu' => $_POST['contenu'],
-                'signale' => $_POST['signale']
             ]);
             if($result){
                 header('Location: ?p=admin.index');
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre commentaire a bien été édité</p>';
             }
         }
         $comment = $this->Comment->find($_GET['id']);
@@ -25,17 +25,24 @@ class CommentController extends AdminController{
     public function delete(){
         if (!empty($_POST)) {
             $result = $this->Comment->delete($_POST['id']);
-            header('Location: ?p=admin.index');
+
+            if ($result){
+                header('Location: ?p=admin.index');
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre commentaire a bien été supprimé</p>';
+            }
         }
     }
 
     public function reset(){
         if (!empty($_POST)){
-            $this->Comment->update($_POST['id'], [
+            $result = $this->Comment->update($_POST['id'], [
                 'signale' => 0
             ]);
+            if ($result){
+                header('location: ?p=admin.index');
+                $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Le compteur des signalements a bien été mise à zero</p>';
+            }
         }
-        header('location: ?p=admin.index');
     }
 
 }

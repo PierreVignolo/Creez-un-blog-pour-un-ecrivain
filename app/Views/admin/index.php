@@ -1,3 +1,5 @@
+<?= $flash; ?>
+
 <div class="block box">
     <h1 class="title is-1">Administrer les articles</h1>
 
