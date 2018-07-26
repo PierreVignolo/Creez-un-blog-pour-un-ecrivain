@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use Core\HTML\BulmaForm;
-
 class CommentController extends AppController{
 
     public function add(){
@@ -21,4 +19,18 @@ class CommentController extends AppController{
         header('location: ?p=posts.single&id='. $_POST['id'] );
     }
 
+    public function signale(){
+
+        if ($_POST['nb'] === null){
+            $this->Comment->update($_POST['id'], [
+                'signale' => 1
+            ]);
+        }else{
+            $this->Comment->update($_POST['id'], [
+                'signale' => $_POST['nb'] + 1
+            ]);
+        }
+        $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Votre signalement a bien été envoyé</p>';
+        header('location: ?p=posts.single&id='. $_POST['aid'] );
+    }
 }

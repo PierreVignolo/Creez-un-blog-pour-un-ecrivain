@@ -29,4 +29,13 @@ class CommentController extends AdminController{
         }
     }
 
+    public function reset(){
+        if (!empty($_POST)){
+            $this->Comment->update($_POST['id'], [
+                'signale' => 0
+            ]);
+        }
+        header('location: ?p=admin.index');
+    }
+
 }

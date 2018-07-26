@@ -41,7 +41,7 @@
                     </div>
                     <div class="navbar-end">
                         <a class="navbar-item" href="?p=users.logout">
-                            Déconnexion <br/>
+                            Déconnexion &nbsp;
                             <span class="icon">
                                 <i class="fas fa-sign-out-alt"></i>
                             </span>
@@ -51,7 +51,7 @@
             </div>
         </nav>
 
-        <div class="container" style="padding-top:6.25em;">
+        <div class="container top">
             <?= $content ?>
         </div>
 

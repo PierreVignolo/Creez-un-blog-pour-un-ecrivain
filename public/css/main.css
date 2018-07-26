@@ -23,3 +23,12 @@ p {
 .zero-top {
   margin-top: 0 !important;
 }
+
+.inline {
+  display: inline;
+}
+
+.top {
+  padding-top:6.25em;
+}
+

@@ -30,7 +30,8 @@ class UsersController extends AppController
     public function logout() {
         $_SESSION["auth"] = NULL;
         session_destroy();
-        $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Le commentaire a bien été rajouté</p>';
+        session_start();
+        $_SESSION['flash'] = '<p class="notification is-success"><button class="delete" onclick="supprimer()"></button>Vous êtes bien déconnecté</p>';
         header("location: ?p=posts.index");
 
 

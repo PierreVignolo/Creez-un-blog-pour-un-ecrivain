@@ -51,6 +51,7 @@ class PostsController extends AdminController{
     public function single()
     {
         $article = $this->Post->findWithCategory($_GET['id']);
+        $comment = $this->Comment->lastByComment($_GET['id']);
 
         \App::getInstance()->title = \App::getInstance()->title . ' - ' . $article->titre;
 
@@ -58,7 +59,7 @@ class PostsController extends AdminController{
             $this->notFound();
         }
 
-        $this->render('admin.posts.single', compact('article'));
+        $this->render('admin.posts.single', compact('article', 'comment'));
 
     }
 

@@ -40,7 +40,7 @@
                     </div>
                     <div class="navbar-end">
                         <a class="navbar-item" href="?p=users.login">
-                            Panel Admin <br/>
+                            Panel Admin &nbsp;
                             <span class="icon">
                                 <i class="fas fa-sign-in-alt"></i>
                             </span>
@@ -50,7 +50,7 @@
             </div>
         </nav>
 
-        <div class="container" style="padding-top:6.25em;">
+        <div class="container top">
             <?= $content ?>
         </div>
 

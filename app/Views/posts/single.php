@@ -24,7 +24,14 @@
     <p class="subtitle is-5 zero-bottom has-text-weight-semibold"><?= $comment->pseudo; ?>,</p>
     <p class="is-italic has-text-grey zero-top"><?= $comment->date_heure; ?></p> 
     <p class="subtitle is-5"><?= $comment->contenu; ?></p>
-    <div class="has-text-right"><button class="button is-warning is-small has-text-danger">Signaler</button></div>
+    <div class="field is-grouped is-grouped-right">
+        <form method="post" action="?p=comment.signale">
+            <input type="hidden" name="id" value="<?= $comment->id ?>">
+            <input type="hidden" name="aid" value="<?= $article->id ?>">
+            <input type="hidden" name="nb" value="<?= $comment->signale ?>">
+            <?= $form->submit('Signaler', 'is-warning has-text-danger is-small'); ?>
+        </form>
+    </div>
     <?php endforeach; ?>
 
 </section>

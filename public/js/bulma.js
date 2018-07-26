@@ -28,4 +28,5 @@ $notif = $('.notification');
 
 function supprimer() {
     $notif.remove();
+    window.location.reload(true);
 }
